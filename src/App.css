@@ -1,0 +1,91 @@
+/* Tailwind Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Variables (Facebook Theme) */
+:root {
+  --facebook-blue: #1877f2;
+  --facebook-gray-bg: #f0f2f5;
+  --facebook-text-dark: #050505;
+  --facebook-text-secondary: #606770;
+  --facebook-green-online: #36a420;
+  --facebook-white: #ffffff;
+  --facebook-hover-light: #ebedf0;
+  --facebook-input-bg: #f0f2f5;
+  --facebook-card-bg: #ffffff;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--facebook-gray-bg);
+  color: var(--facebook-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure the app takes full height */
+#root, html, body {
+  height: 100%;
+}
+
+/* Custom Scrollbar Styling (Webkit Browsers) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+/* Firefox scrollbar support */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 transparent;
+}
+
+/* Custom Component Class Examples */
+
+/* Primary Button Styling */
+.facebook-btn-primary {
+  @apply bg-[var(--facebook-blue)] text-white font-bold py-3 px-4 rounded-lg transition duration-200 hover:bg-[#156cd4] focus:outline-none focus:ring-2 focus:ring-[var(--facebook-blue)] focus:ring-offset-2;
+}
+
+/* Icon Button Styling (Circular, often used in Header/Sidebar) */
+.facebook-icon-btn {
+  @apply w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 transition duration-150 hover:bg-gray-300 cursor-pointer;
+}
+
+/* Standard Facebook Card/Post Shadow */
+.facebook-card-shadow {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Input for Form Consistency */
+.facebook-input {
+  @apply w-full p-3 border border-gray-300 rounded-lg bg-white text-base transition duration-100;
+}
+.facebook-input:focus {
+  @apply border-[var(--facebook-blue)] ring-1 ring-[var(--facebook-blue)] outline-none;
+}
+
+/* Styling for Avatar wrappers to handle online status badge */
+.avatar-wrapper {
+  @apply relative;
+}
+.online-status-badge {
+  @apply absolute bottom-0 right-0 w-3 h-3 bg-[var(--facebook-green-online)] rounded-full border-2 border-[var(--facebook-card-bg)];
+}
